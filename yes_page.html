@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knew you would say yes!</title>
+    <link rel="stylesheet" href="./yes_style.css">
+</head>
+<body>
+    <div id="bab-party"></div>
+    <div class="container">
+        <h1 class="header_text">Knew you would say yes!</h1>
+        <div class="gif_container">
+            <img src="pochacco_happy.gif">
+        </div>
+        <button class="bab-button" onclick="startBabParty()">Click here if you want more babs!</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    // start the animation as soon as the yes page loads
+    startBabParty();
+    </script>
+    
+    <audio id="yesSong" src="cute-song.mp3" loop></audio>
+
+    <script>
+        const song = document.getElementById("yesSong");
+        song.volume = 0;
+        song.currentTime = 30;
+        song.play();
+
+        let v = 0;
+        const fade = setInterval(() => {
+            v += 0.05;
+            song.volume = Math.min(v, 0.6);
+            if (v >= 0.6) clearInterval(fade);
+        }, 100);
+    </script>
+
+
+</body>
+</html>

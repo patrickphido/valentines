@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e3e3;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.header_text {
+    font-size: 3em;
+    color: #d32f2f;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}
+
+  #bab-party {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.bab {
+  position: absolute;
+  width: 48px; /* you can change this */
+  height: 48px;
+  user-select: none;
+}
+
+/* some babs spin */
+.bab.spin {
+  animation: babSpin 1.2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes babSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* some babs go RGB (hue shift + glow) */
+.bab.rgb {
+  animation: babRgb 1.1s linear infinite;
+}
+
+@keyframes babRgb {
+  0%   { filter: hue-rotate(0deg) saturate(2) drop-shadow(0 0 6px rgba(255,0,0,.8)); }
+  33%  { filter: hue-rotate(120deg) saturate(2) drop-shadow(0 0 6px rgba(0,255,0,.8)); }
+  66%  { filter: hue-rotate(240deg) saturate(2) drop-shadow(0 0 6px rgba(0,0,255,.8)); }
+  100% { filter: hue-rotate(360deg) saturate(2) drop-shadow(0 0 6px rgba(255,0,0,.8)); }
+}
